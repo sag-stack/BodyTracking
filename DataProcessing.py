@@ -76,3 +76,88 @@ except:
     Scatterplot_graph('head_joint',total_dataframe,154) #Plotting graph of head_joint
     Scatterplot_graph('right_Leg_joint',total_dataframe,25) #Plotting graph of right_Leg_joint
     Scatterplot_graph('left_Leg_joint',total_dataframe,10) #Plotting graph of left_Leg_joint
+
+    #Complete Body Plotting Graph
+  
+    title = ("Movement of Body Tracked")
+    root_X_val = total_dataframe.iloc[:,1]
+    root_Y_val = total_dataframe.iloc[:,2]
+    head_X_val = total_dataframe.iloc[:,154]
+    head_Y_val = total_dataframe.iloc[:,155]
+
+    leftleg_X_val = total_dataframe.iloc[:,10]
+    leftleg_Y_val = total_dataframe.iloc[:,11] 
+    leftupleg_X_val = total_dataframe.iloc[:,7]
+    leftupleg_Y_val = total_dataframe.iloc[:,8] 
+    leftfoot_X_val = total_dataframe.iloc[:,13]
+    leftfoot_Y_val = total_dataframe.iloc[:,14]
+
+    rightleg_X_val = total_dataframe.iloc[:,25]
+    rightleg_Y_val = total_dataframe.iloc[:,26]
+    rightupleg_X_val = total_dataframe.iloc[:,22]
+    rightupleg_Y_val = total_dataframe.iloc[:,23]
+    rightfoot_X_val = total_dataframe.iloc[:,28]
+    rightfoot_Y_val = total_dataframe.iloc[:,29]
+    
+    lefthand_X_val = total_dataframe.iloc[:,67]
+    lefthand_Y_val = total_dataframe.iloc[:,68]
+    leftshoulder_X_val = total_dataframe.iloc[:,58]
+    leftshoulder_Y_val = total_dataframe.iloc[:,59]
+    leftarm_X_val = total_dataframe.iloc[:,61]
+    leftarm_Y_val = total_dataframe.iloc[:,62]
+    leftforearm_X_val = total_dataframe.iloc[:,64]
+    leftforearm_Y_val = total_dataframe.iloc[:,65]
+
+    righthand_X_val = total_dataframe.iloc[:,199]
+    righthand_Y_val = total_dataframe.iloc[:,200]
+    rightforearm_X_val = total_dataframe.iloc[:,196]
+    rightforearm_Y_val = total_dataframe.iloc[:,197]
+    rightshoulder_X_val = total_dataframe.iloc[:,190]
+    rightshoulder_Y_val = total_dataframe.iloc[:,191]
+    rightarm_X_val = total_dataframe.iloc[:,193]
+    rightarm_Y_val = total_dataframe.iloc[:,194]
+
+    plt.xlim(-1.25,1.25)
+    plt.ylim(-1.25,1.25)
+    plt.title(title)
+    root = plt.scatter(root_X_val,root_Y_val, color = 'k', zorder = 1)
+    head = plt.scatter(head_X_val,head_Y_val, color = '#ff00e6', zorder = 1)
+    leftleg = plt.scatter(leftleg_X_val,leftleg_Y_val, color = '#008c25', zorder = 1)
+    leftupleg = plt.scatter(leftupleg_X_val,leftupleg_Y_val, color = '#00ff44', zorder = 1)
+    leftfoot = plt.scatter(leftfoot_X_val,leftfoot_Y_val, color ='#004212', zorder = 1)
+    rightleg = plt.scatter(rightleg_X_val, rightleg_Y_val, color = '#a65600' , zorder = 1 )
+    rightupleg = plt.scatter(rightupleg_X_val, rightupleg_Y_val, color = '#ff8400' , zorder = 1 )
+    rightfoot = plt.scatter(rightfoot_X_val, rightfoot_Y_val, color = '#633300' , zorder = 1 )
+    lefthand = plt.scatter(lefthand_X_val,lefthand_Y_val, color = '#00fff7', zorder = 1)
+    leftshoulder = plt.scatter(leftshoulder_X_val,leftshoulder_Y_val, color = '#004040', zorder = 1)
+    leftforearm = plt.scatter(leftforearm_X_val,leftforearm_Y_val, color = '#067575', zorder = 1)
+    leftarm = plt.scatter(leftarm_X_val,leftarm_Y_val, color = '#00b5b5', zorder = 1)
+    righthand = plt.scatter(righthand_X_val,righthand_Y_val, color = '#004cff', zorder = 1)
+    rightshoulder = plt.scatter(rightshoulder_X_val,rightshoulder_Y_val, color = '#001547', zorder = 1)
+    rightforearm = plt.scatter(rightforearm_X_val,rightforearm_Y_val, color = '#11368c', zorder = 1)
+    rightarm = plt.scatter(rightarm_X_val,rightarm_Y_val, color = '#0038bd', zorder = 1)
+
+    plt.plot(root_X_val,root_Y_val, color = 'k', zorder = 2)
+    plt.plot(head_X_val,head_Y_val, color = '#ff00e6', zorder = 2)
+    plt.plot(leftleg_X_val,leftleg_Y_val, color = '#008c25', zorder = 2)
+    plt.plot(leftupleg_X_val,leftupleg_Y_val, color = '#00ff44', zorder = 2)
+    plt.plot(leftfoot_X_val,leftfoot_Y_val, color ='#004212', zorder = 2)
+
+    plt.plot(rightleg_X_val,rightleg_Y_val, color = '#a65600', zorder = 2)
+    plt.plot(rightupleg_X_val, rightupleg_Y_val, color = '#ff8400' , zorder = 2 )
+    plt.plot(rightfoot_X_val, rightfoot_Y_val, color = '#633300' , zorder = 2 )
+
+    plt.plot(lefthand_X_val,lefthand_Y_val, color = '#00fff7', zorder = 2)
+    plt.plot(leftshoulder_X_val,leftshoulder_Y_val, color = '#004040', zorder = 2)
+    plt.plot(leftforearm_X_val,leftforearm_Y_val, color = '#067575', zorder = 2)
+    plt.plot(leftarm_X_val,leftarm_Y_val, color = '#00b5b5', zorder = 2)
+
+    plt.plot(righthand_X_val,righthand_Y_val, color = '#004cff', zorder = 2)
+    plt.plot(rightshoulder_X_val,rightshoulder_Y_val, color = '#001547', zorder = 2)
+    plt.plot(rightforearm_X_val,rightforearm_Y_val, color = '#11368c', zorder = 2)
+    plt.plot(rightarm_X_val,rightarm_Y_val, color = '#0038bd', zorder = 2)
+    plt.xlabel = "X - Coordinate"
+    plt.ylabel = "Y - Coordinate"
+    plt.legend((root,head,leftupleg,leftleg,leftfoot,rightupleg,rightleg,rightfoot,leftshoulder,leftarm,leftforearm,lefthand,rightshoulder,rightarm,rightforearm,righthand),('root','head_joint','left_upLeg_joint','left_leg_joint','left_foot_joint','right_upLeg_joint','right_leg_joint','right_foot_joint','left_shoulder_joint','left_arm_joint','left_forearm_joint','left_hand_joint','right_shoulder_joint','right_arm_joint','right_forearm_joint','right_hand_joint'),scatterpoints=1,ncol = 1,bbox_to_anchor=(1, 0.5),loc = 'center left',fancybox = True)
+    plt.show()
+
